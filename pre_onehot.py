@@ -21,7 +21,7 @@ def onehot(sequence):
 
 
 names = ['GM12878', 'HUVEC', 'HeLa-S3', 'IMR90', 'K562', 'NHEK']
-name=names[3]
+name=names[1]
 train_dir="data/IMR90/"
 
 test_dir='data/IMR90/'
