@@ -205,7 +205,7 @@ t1 = datetime.now().strftime('%Y-%m-%d-%H:%M:%S')
 
 
 names = ['GM12878', 'HUVEC', 'HeLa-S3', 'IMR90', 'K562', 'NHEK','all','all-NHEK']
-name=names[3]
+name=names[0]
 #The data used here is the sequence processed by data_processing.py.
 Data_dir='./data/%s/'%name
 train=np.load(Data_dir+'%s_train.npz'%name)
