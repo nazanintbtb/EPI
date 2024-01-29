@@ -22,10 +22,10 @@ def onehot(sequence):
 
 names = ['GM12878', 'HUVEC', 'HeLa-S3', 'IMR90', 'K562', 'NHEK']
 name=names[1]
-train_dir="data/GM12878/"
+train_dir="data/HUVEC/"
 
-test_dir='data/GM12878/'
-Data_dir='data/GM12878/'
+test_dir='data/HUVEC/'
+Data_dir='data/HUVEC/'
 print ('Experiment on %s dataset' % name)
 
 print ('Loading seq data...')
