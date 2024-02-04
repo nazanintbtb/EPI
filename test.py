@@ -7,14 +7,14 @@ from sklearn.metrics import roc_auc_score, average_precision_score
 
 
 models = ['GM12878', 'HUVEC', 'HeLa-S3', 'IMR90', 'K562', 'NHEK']
-m = models[3]
+m = models[0]
 
 
 
 for i in range(0, 300):
-    model = keras_models.load_model(f"./Model-IMR90/{m}Model{i}.tf")
+    model = keras_models.load_model(f"./Model-GM12878/{m}Model{i}.tf")
 
-    names = ['IMR90']
+    names = ['GM12878']
     for name in names:
         Data_dir = './data/%s/' % name
         test = np.load(Data_dir + '%s_test.npz' % name)
