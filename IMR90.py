@@ -19,7 +19,7 @@ from sklearn.metrics import roc_auc_score,average_precision_score
 from sklearn.model_selection import train_test_split
 
 
-MAX_LEN_en = 3000
+MAX_LEN_en = 3006
 MAX_LEN_pr = 2000
 #NB_WORDS = 4097
 #EMBEDDING_DIM = 100
@@ -141,11 +141,11 @@ def get_model():
 
     output=keras.layers.BatchNormalization()(merge_layer)
     output=keras.layers.Dropout(0.5)( output)
-    output, attn_weights=TransformerBlock(num_heads=16, d_model=96, dff=255, rate=0.5)(output)
+    output, attn_weights=TransformerBlock(num_heads=8, d_model=96, dff=255, rate=0.5)(output)
     
 
     
-    output = AttLayer(50)(output)
+    output = AttLayer(20)(output)
     #output=Flatten()(output)
     #output=Dense(925,activation='relu')(output)
 
@@ -205,7 +205,7 @@ t1 = datetime.now().strftime('%Y-%m-%d-%H:%M:%S')
 
 
 names = ['GM12878', 'HUVEC', 'HeLa-S3', 'IMR90', 'K562', 'NHEK','all','all-NHEK']
-name=names[0]
+name=names[1]
 #The data used here is the sequence processed by data_processing.py.
 Data_dir='./data/%s/'%name
 train=np.load(Data_dir+'%s_train.npz'%name)
